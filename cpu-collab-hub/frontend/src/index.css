@@ -1,0 +1,75 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ===== Global Styles ===== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background-color: #f8fafc;
+  color: #1e293b;
+  line-height: 1.6;
+}
+
+h1, h2, h3 {
+  font-family: 'Syne', sans-serif;
+}
+
+/* ===== Custom Scrollbar ===== */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #f1f5f9; }
+::-webkit-scrollbar-thumb { background: #c7d2fe; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #6366f1; }
+
+/* ===== Utility Classes ===== */
+.card {
+  @apply bg-white rounded-2xl shadow-sm border border-slate-100 p-6;
+}
+
+.btn-primary {
+  @apply bg-indigo-600 hover:bg-indigo-700 text-white font-semibold px-5 py-2.5 rounded-xl transition-all duration-200 disabled:opacity-60 disabled:cursor-not-allowed;
+}
+
+.btn-secondary {
+  @apply bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold px-5 py-2.5 rounded-xl transition-all duration-200;
+}
+
+.btn-outline {
+  @apply border-2 border-indigo-500 text-indigo-600 hover:bg-indigo-50 font-semibold px-5 py-2.5 rounded-xl transition-all duration-200;
+}
+
+.input {
+  @apply w-full px-4 py-3 rounded-xl border border-slate-200 bg-slate-50 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:bg-white transition-all duration-200 text-slate-800 placeholder-slate-400;
+}
+
+.tag {
+  @apply inline-block bg-indigo-50 text-indigo-700 text-xs font-semibold px-3 py-1 rounded-full;
+}
+
+.tag-green {
+  @apply inline-block bg-emerald-50 text-emerald-700 text-xs font-semibold px-3 py-1 rounded-full;
+}
+
+/* ===== Animations ===== */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+  animation: fadeIn 0.35s ease forwards;
+}
+
+/* ===== Chat bubbles ===== */
+.bubble-sent {
+  @apply bg-indigo-600 text-white rounded-2xl rounded-br-sm px-4 py-2 max-w-xs ml-auto;
+}
+
+.bubble-received {
+  @apply bg-white border border-slate-200 text-slate-800 rounded-2xl rounded-bl-sm px-4 py-2 max-w-xs;
+}
